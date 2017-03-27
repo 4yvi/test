@@ -13,7 +13,7 @@ $x = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
  * */
 function parse(array $array)
 {
-	$arResult = array();
+	$arResult = [];
 
 	foreach ($array as $value) {
 		$arResult = [$value => $arResult];

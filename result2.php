@@ -20,21 +20,21 @@ $data1 = [
  */
 function parse(array $array)
 {
-	$arResult = array();
+	$arResult = [];
 
 	foreach ($array as $key => $value) {
 
 		//	Разбираем и переварачиваем массив
 		$explode = array_reverse(explode('.', $key));
 
-		$arBuffer = array();
+		$arBuffer = [];
 
 		foreach ($explode as $keyEx => $valueEx){
 			if ($keyEx == 0) {
 				$arBuffer[$valueEx] = $value;
 			} else {
 				$arBufferRe = $arBuffer;
-				$arBuffer = array();
+				$arBuffer = [];
 				$arBuffer[$valueEx] = $arBufferRe;
 			}
 		}
@@ -59,9 +59,9 @@ function parse(array $array)
  *
  * 	@return array
  * */
-function reparse(array $array, $keys = array())
+function reparse(array $array, $keys = [])
 {
-	$arResult = array();
+	$arResult = [];
 	foreach ($array as $key => $value) {
 		if (is_array($value)) {
 			$keys[] = $key;
